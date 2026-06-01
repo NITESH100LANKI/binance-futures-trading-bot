@@ -276,22 +276,31 @@ def _plotly_layout(height: int = 320) -> dict:
 # CACHED BINANCE CLIENT
 # ═══════════════════════════════════════════════════════════════════════════════
 @st.cache_resource(show_spinner="Connecting to Binance Futures Testnet...")
-def _get_client():
+def _get_client_cached():
     """
     Create and cache a single Binance Futures Testnet client.
+    Raises exception on failure to prevent Streamlit from caching failures.
+    """
+    config.validate_config()
+    return create_client()
 
-    Returns:
-        (client, None)       on success
-        (None, error_str)    on failure
+
+def _get_client():
+    """
+    Wrap the cached client creation.
+    Returns (client, None) on success or (None, error_str) on failure,
+    while ensuring failures are not cached by Streamlit.
     """
     try:
-        config.validate_config()
-        client = create_client()
+        client = _get_client_cached()
         return client, None
-    except RuntimeError as e:
-        return None, str(e)
     except Exception as e:
-        return None, f"{type(e).__name__}: {e}"
+        # Clear the cache on failure so the next load retries
+        try:
+            _get_client_cached.clear()
+        except Exception:
+            pass
+        return None, str(e)
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
