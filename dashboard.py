@@ -1083,17 +1083,38 @@ def main() -> None:
             f"**Cannot connect to Binance Testnet.**\n\n{err}",
             icon="🔌",
         )
+        st.markdown("### How to Fix:")
+        col_local, col_cloud = st.columns(2)
+        with col_local:
+            st.markdown(
+                """
+                **1. Local Development (.env)**
+                Ensure you have a `.env` file in your project root with:
+                ```ini
+                BINANCE_API_KEY=your_testnet_key
+                BINANCE_API_SECRET=your_testnet_secret
+                ```
+                """
+            )
+        with col_cloud:
+            st.markdown(
+                """
+                **2. Streamlit Cloud (Secrets)**
+                Add your credentials to the app's Secrets settings:
+                1. Go to your **Streamlit Share Dashboard**
+                2. Click the three dots `...` next to your app -> **Settings**
+                3. Go to the **Secrets** tab and paste:
+                ```toml
+                BINANCE_API_KEY = "your_testnet_key"
+                BINANCE_API_SECRET = "your_testnet_secret"
+                ```
+                """
+            )
         st.markdown(
-            f"""
-            **To fix this:**
-            1. Ensure your `.env` file exists in the project root.
-            2. It must contain:
-            ```
-            BINANCE_API_KEY=your_testnet_key
-            BINANCE_API_SECRET=your_testnet_secret
-            ```
-            3. Get free testnet keys at **https://testnet.binancefuture.com**
-            4. Click **Reset Connection** in the sidebar after updating `.env`.
+            """
+            ---
+            * 🔑 **Need API Keys?** Get them for free at [testnet.binancefuture.com](https://testnet.binancefuture.com)
+            * 🔄 **Already updated?** Click **Reset Connection** in the sidebar.
             """
         )
         st.stop()
