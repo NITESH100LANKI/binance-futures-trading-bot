@@ -1,0 +1,179 @@
+2026-06-01 14:02:55 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:02:55 | INFO     | trading_bot | 🤖 Binance Futures Testnet Trading Bot — Starting
+2026-06-01 14:02:55 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:02:55 | DEBUG    | trading_bot | Initialising Binance Futures Testnet client …
+2026-06-01 14:02:56 | INFO     | trading_bot | ✅ Connected to Binance Futures Testnet successfully.
+2026-06-01 14:02:56 | INFO     | trading_bot | ✅ Validation passed: MARKET BUY 0.001 BTCUSDT
+2026-06-01 14:02:56 | INFO     | trading_bot | 📤 Placing MARKET BUY order | Symbol: BTCUSDT | Qty: 0.001
+2026-06-01 14:02:58 | INFO     | trading_bot | ✅ Order placed successfully!
+   ┌─ Order ID   : 13677750659
+   ├─ Client ID  : x-Cb7ytekJ147c5410ec080f35db8c43
+   ├─ Symbol     : BTCUSDT
+   ├─ Side       : BUY
+   ├─ Type       : MARKET
+   ├─ Quantity   : 0.0010
+   ├─ Avg Price  : 0.00
+   └─ Status     : NEW
+2026-06-01 14:02:58 | DEBUG    | trading_bot | Full API Response: {
+  "orderId": 13677750659,
+  "symbol": "BTCUSDT",
+  "status": "NEW",
+  "clientOrderId": "x-Cb7ytekJ147c5410ec080f35db8c43",
+  "price": "0.00",
+  "avgPrice": "0.00",
+  "origQty": "0.0010",
+  "executedQty": "0.0000",
+  "cumQty": "0.0000",
+  "cumQuote": "0.000000",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "reduceOnly": false,
+  "closePosition": false,
+  "side": "BUY",
+  "positionSide": "BOTH",
+  "stopPrice": "0.00",
+  "workingType": "CONTRACT_PRICE",
+  "priceProtect": false,
+  "origType": "MARKET",
+  "priceMatch": "NONE",
+  "selfTradePreventionMode": "EXPIRE_MAKER",
+  "goodTillDate": 0,
+  "updateTime": 1780302777386
+}
+2026-06-01 14:02:58 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:02:58 | INFO     | trading_bot | 🤖 Trading Bot — Session ended.
+2026-06-01 14:02:58 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:03:37 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:03:37 | INFO     | trading_bot | 🤖 Binance Futures Testnet Trading Bot — Starting
+2026-06-01 14:03:37 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:03:37 | DEBUG    | trading_bot | Initialising Binance Futures Testnet client …
+2026-06-01 14:03:39 | INFO     | trading_bot | ✅ Connected to Binance Futures Testnet successfully.
+2026-06-01 14:03:39 | INFO     | trading_bot | ✅ Validation passed: MARKET BUY 0.001 BTCUSDT
+2026-06-01 14:03:39 | INFO     | trading_bot | 📤 Placing MARKET BUY order | Symbol: BTCUSDT | Qty: 0.001
+2026-06-01 14:03:39 | INFO     | trading_bot | ✅ Order placed successfully!
+   ┌─ Order ID   : 13677801857
+   ├─ Client ID  : x-Cb7ytekJ1b7832c2ffec68e041406b
+   ├─ Symbol     : BTCUSDT
+   ├─ Side       : BUY
+   ├─ Type       : MARKET
+   ├─ Quantity   : 0.0010
+   ├─ Avg Price  : 0.00
+   └─ Status     : NEW
+2026-06-01 14:03:39 | DEBUG    | trading_bot | Full API Response: {
+  "orderId": 13677801857,
+  "symbol": "BTCUSDT",
+  "status": "NEW",
+  "clientOrderId": "x-Cb7ytekJ1b7832c2ffec68e041406b",
+  "price": "0.00",
+  "avgPrice": "0.00",
+  "origQty": "0.0010",
+  "executedQty": "0.0000",
+  "cumQty": "0.0000",
+  "cumQuote": "0.000000",
+  "timeInForce": "GTC",
+  "type": "MARKET",
+  "reduceOnly": false,
+  "closePosition": false,
+  "side": "BUY",
+  "positionSide": "BOTH",
+  "stopPrice": "0.00",
+  "workingType": "CONTRACT_PRICE",
+  "priceProtect": false,
+  "origType": "MARKET",
+  "priceMatch": "NONE",
+  "selfTradePreventionMode": "EXPIRE_MAKER",
+  "goodTillDate": 0,
+  "updateTime": 1780302819089
+}
+2026-06-01 14:03:39 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:03:39 | INFO     | trading_bot | 🤖 Trading Bot — Session ended.
+2026-06-01 14:03:39 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:03:56 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:03:56 | INFO     | trading_bot | 🤖 Binance Futures Testnet Trading Bot — Starting
+2026-06-01 14:03:56 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:03:56 | DEBUG    | trading_bot | Initialising Binance Futures Testnet client …
+2026-06-01 14:03:57 | INFO     | trading_bot | ✅ Connected to Binance Futures Testnet successfully.
+2026-06-01 14:03:57 | INFO     | trading_bot | ✅ Validation passed: LIMIT SELL 0.001 BTCUSDT @ 120000.0
+2026-06-01 14:03:57 | INFO     | trading_bot | 📤 Placing LIMIT SELL order | Symbol: BTCUSDT | Qty: 0.001 | Price: 120000.0
+2026-06-01 14:03:58 | INFO     | trading_bot | ✅ Order placed successfully!
+   ┌─ Order ID   : 13677824810
+   ├─ Client ID  : x-Cb7ytekJf138a3590923945ecdaa32
+   ├─ Symbol     : BTCUSDT
+   ├─ Side       : SELL
+   ├─ Type       : LIMIT
+   ├─ Quantity   : 0.0010
+   ├─ Avg Price  : 0.00
+   └─ Status     : NEW
+2026-06-01 14:03:58 | DEBUG    | trading_bot | Full API Response: {
+  "orderId": 13677824810,
+  "symbol": "BTCUSDT",
+  "status": "NEW",
+  "clientOrderId": "x-Cb7ytekJf138a3590923945ecdaa32",
+  "price": "120000.00",
+  "avgPrice": "0.00",
+  "origQty": "0.0010",
+  "executedQty": "0.0000",
+  "cumQty": "0.0000",
+  "cumQuote": "0.000000",
+  "timeInForce": "GTC",
+  "type": "LIMIT",
+  "reduceOnly": false,
+  "closePosition": false,
+  "side": "SELL",
+  "positionSide": "BOTH",
+  "stopPrice": "0.00",
+  "workingType": "CONTRACT_PRICE",
+  "priceProtect": false,
+  "origType": "LIMIT",
+  "priceMatch": "NONE",
+  "selfTradePreventionMode": "EXPIRE_MAKER",
+  "goodTillDate": 0,
+  "updateTime": 1780302837560
+}
+2026-06-01 14:03:58 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:03:58 | INFO     | trading_bot | 🤖 Trading Bot — Session ended.
+2026-06-01 14:03:58 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:04:09 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:04:09 | INFO     | trading_bot | 🤖 Binance Futures Testnet Trading Bot — Starting
+2026-06-01 14:04:09 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:04:09 | DEBUG    | trading_bot | Initialising Binance Futures Testnet client …
+2026-06-01 14:04:09 | INFO     | trading_bot | ✅ Connected to Binance Futures Testnet successfully.
+2026-06-01 14:04:09 | INFO     | trading_bot | 📊 Fetching open positions …
+2026-06-01 14:04:10 | INFO     | trading_bot | Found 1 open position(s):
+2026-06-01 14:04:10 | INFO     | trading_bot |    📈 BTCUSDT | LONG 0.002 units
+      Entry Price    : 72666.4000
+      Mark Price     : 72817.7000
+      Unrealised PnL : 0.3026 USDT
+2026-06-01 14:04:25 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:04:25 | INFO     | trading_bot | 🤖 Binance Futures Testnet Trading Bot — Starting
+2026-06-01 14:04:25 | INFO     | trading_bot | ════════════════════════════════════════════════════════════
+2026-06-01 14:04:25 | DEBUG    | trading_bot | Initialising Binance Futures Testnet client …
+2026-06-01 14:04:27 | INFO     | trading_bot | ✅ Connected to Binance Futures Testnet successfully.
+2026-06-01 14:04:27 | INFO     | trading_bot | 🗑️  Cancelling order 13677824810 for BTCUSDT …
+2026-06-01 14:04:27 | INFO     | trading_bot | ✅ Order 13677824810 cancelled successfully. Status: CANCELED
+2026-06-01 14:04:27 | DEBUG    | trading_bot | Cancel response: {
+  "orderId": 13677824810,
+  "symbol": "BTCUSDT",
+  "status": "CANCELED",
+  "clientOrderId": "x-Cb7ytekJf138a3590923945ecdaa32",
+  "price": "120000.00",
+  "avgPrice": "0.00",
+  "origQty": "0.0010",
+  "executedQty": "0.0000",
+  "cumQty": "0.0000",
+  "cumQuote": "0.000000",
+  "timeInForce": "GTC",
+  "type": "LIMIT",
+  "reduceOnly": false,
+  "closePosition": false,
+  "side": "SELL",
+  "positionSide": "BOTH",
+  "stopPrice": "0.00",
+  "workingType": "CONTRACT_PRICE",
+  "priceProtect": false,
+  "origType": "LIMIT",
+  "priceMatch": "NONE",
+  "selfTradePreventionMode": "EXPIRE_MAKER",
+  "goodTillDate": 0,
+  "updateTime": 1780302867227
+}

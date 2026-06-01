@@ -1,0 +1,12 @@
+# Binance Futures Testnet Trading Bot — Dependencies
+# Generated: 2026-06-01
+# Install: pip install -r requirements.txt
+
+# ── Binance API client ────────────────────────────────────────────────────────
+python-binance>=1.0.19
+
+# ── Environment variable loader ───────────────────────────────────────────────
+python-dotenv>=1.0.0
+
+# ── Testing framework (for unit tests) ───────────────────────────────────────
+pytest>=7.4.0
