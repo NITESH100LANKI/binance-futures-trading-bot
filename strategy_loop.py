@@ -38,13 +38,35 @@ def build_strategy_parser() -> argparse.ArgumentParser:
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    parser.add_argument("--symbol",     type=str,   required=True,  help="Trading pair (e.g. BTCUSDT)")
-    parser.add_argument("--side",       type=str,   required=True,  choices=["BUY", "SELL"], help="BUY or SELL")
-    parser.add_argument("--order-type", type=str,   required=True,  dest="order_type", choices=["MARKET", "LIMIT"])
-    parser.add_argument("--quantity",   type=float, required=True,  help="Quantity per iteration")
-    parser.add_argument("--price",      type=float, default=None,   help="Limit price (LIMIT orders only)")
-    parser.add_argument("--interval",   type=int,   default=60,     help="Seconds between orders (default: 60)")
-    parser.add_argument("--iterations", type=int,   default=5,      help="Number of orders to place (default: 5)")
+    parser.add_argument(
+        "--symbol", type=str, required=True,
+        help="Trading pair (e.g. BTCUSDT)"
+    )
+    parser.add_argument(
+        "--side", type=str, required=True,
+        choices=["BUY", "SELL"], help="BUY or SELL"
+    )
+    parser.add_argument(
+        "--order-type", type=str, required=True,
+        dest="order_type", choices=["MARKET", "LIMIT"],
+        help="Order type: MARKET or LIMIT"
+    )
+    parser.add_argument(
+        "--quantity", type=float, required=True,
+        help="Quantity per iteration"
+    )
+    parser.add_argument(
+        "--price", type=float, default=None,
+        help="Limit price (LIMIT orders only)"
+    )
+    parser.add_argument(
+        "--interval", type=int, default=60,
+        help="Seconds between orders (default: 60)"
+    )
+    parser.add_argument(
+        "--iterations", type=int, default=5,
+        help="Number of orders to place (default: 5)"
+    )
     return parser
 
 
@@ -69,11 +91,14 @@ def run_strategy(
         interval:   Seconds between orders.
         iterations: Total number of orders to place.
     """
-    logger.info("═" * 60)
-    logger.info(f"🔄 Strategy Loop Starting")
-    logger.info(f"   Symbol: {symbol} | Side: {side} | Type: {order_type}")
-    logger.info(f"   Qty: {quantity} | Price: {price} | Interval: {interval}s | Runs: {iterations}")
-    logger.info("═" * 60)
+    logger.info("=" * 60)
+    logger.info("Strategy Loop Starting")
+    logger.info(f"  Symbol: {symbol} | Side: {side} | Type: {order_type}")
+    logger.info(
+        f"  Qty: {quantity} | Price: {price}"
+        f" | Interval: {interval}s | Runs: {iterations}"
+    )
+    logger.info("=" * 60)
 
     # Validate once before starting
     try:
@@ -115,7 +140,7 @@ def run_strategy(
 
 def main() -> int:
     parser = build_strategy_parser()
-    args   = parser.parse_args()
+    args = parser.parse_args()
 
     run_strategy(
         symbol=args.symbol,

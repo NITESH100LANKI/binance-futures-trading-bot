@@ -187,16 +187,16 @@ def validate_order_params(
     Raises:
         ValidationError: On first failed validation.
     """
-    validated_symbol     = validate_symbol(symbol)
-    validated_side       = validate_side(side)
+    validated_symbol = validate_symbol(symbol)
+    validated_side = validate_side(side)
     validated_order_type = validate_order_type(order_type)
-    validated_quantity   = validate_quantity(quantity)
-    validated_price      = validate_price(price, validated_order_type)
+    validated_quantity = validate_quantity(quantity)
+    validated_price = validate_price(price, validated_order_type)
 
     return {
-        "symbol":     validated_symbol,
-        "side":       validated_side,
+        "symbol": validated_symbol,
+        "side": validated_side,
         "order_type": validated_order_type,
-        "quantity":   validated_quantity,
-        "price":      validated_price,
+        "quantity": validated_quantity,
+        "price": validated_price,
     }

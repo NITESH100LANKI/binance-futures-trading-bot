@@ -143,25 +143,25 @@ def _place_limit_order(
 
 def _log_order_response(response: dict) -> None:
     """Parse and log key fields from an order response."""
-    order_id   = response.get("orderId", "N/A")
-    status     = response.get("status", "N/A")
-    symbol     = response.get("symbol", "N/A")
-    side       = response.get("side", "N/A")
+    order_id = response.get("orderId", "N/A")
+    status = response.get("status", "N/A")
+    symbol = response.get("symbol", "N/A")
+    side = response.get("side", "N/A")
     order_type = response.get("type", "N/A")
-    qty        = response.get("origQty", "N/A")
-    avg_price  = response.get("avgPrice", response.get("price", "N/A"))
-    client_id  = response.get("clientOrderId", "N/A")
+    qty = response.get("origQty", "N/A")
+    avg_price = response.get("avgPrice", response.get("price", "N/A"))
+    client_id = response.get("clientOrderId", "N/A")
 
     logger.info(
-        f"✅ Order placed successfully!\n"
-        f"   ┌─ Order ID   : {order_id}\n"
-        f"   ├─ Client ID  : {client_id}\n"
-        f"   ├─ Symbol     : {symbol}\n"
-        f"   ├─ Side       : {side}\n"
-        f"   ├─ Type       : {order_type}\n"
-        f"   ├─ Quantity   : {qty}\n"
-        f"   ├─ Avg Price  : {avg_price}\n"
-        f"   └─ Status     : {status}"
+        "[ORDER] Placed successfully!\n"
+        f"  Order ID   : {order_id}\n"
+        f"  Client ID  : {client_id}\n"
+        f"  Symbol     : {symbol}\n"
+        f"  Side       : {side}\n"
+        f"  Type       : {order_type}\n"
+        f"  Quantity   : {qty}\n"
+        f"  Avg Price  : {avg_price}\n"
+        f"  Status     : {status}"
     )
     logger.debug(f"Full API Response: {json.dumps(response, indent=2)}")
 
@@ -184,18 +184,18 @@ def show_positions(client: Client) -> None:
 
         logger.info(f"Found {len(open_positions)} open position(s):")
         for pos in open_positions:
-            symbol        = pos.get("symbol")
-            amt           = float(pos.get("positionAmt", 0))
-            entry_price   = float(pos.get("entryPrice", 0))
-            mark_price    = float(pos.get("markPrice", 0))
+            symbol = pos.get("symbol")
+            amt = float(pos.get("positionAmt", 0))
+            entry_price = float(pos.get("entryPrice", 0))
+            mark_price = float(pos.get("markPrice", 0))
             unrealised_pnl = float(pos.get("unRealizedProfit", 0))
 
-            # ── PnL Estimation [Bonus §7c] ─────────────────────────────────
+            # PnL Estimation [Bonus §7c]
             direction = "LONG" if amt > 0 else "SHORT"
-            pnl_direction = "📈" if unrealised_pnl >= 0 else "📉"
+            pnl_sign = "+" if unrealised_pnl >= 0 else "-"
 
             logger.info(
-                f"   {pnl_direction} {symbol} | {direction} {abs(amt)} units\n"
+                f"  [{pnl_sign}] {symbol} | {direction} {abs(amt)} units\n"
                 f"      Entry Price    : {entry_price:.4f}\n"
                 f"      Mark Price     : {mark_price:.4f}\n"
                 f"      Unrealised PnL : {unrealised_pnl:.4f} USDT"
@@ -241,11 +241,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="bot.py",
         description=(
-            "🤖 Binance Futures Testnet Trading Bot\n"
+            "Binance Futures Testnet Trading Bot\n"
             "Place MARKET and LIMIT orders via command-line interface.\n\n"
             "Examples:\n"
-            "  python bot.py --symbol BTCUSDT --side BUY --order-type MARKET --quantity 0.01\n"
-            "  python bot.py --symbol BTCUSDT --side SELL --order-type LIMIT --quantity 0.01 --price 65000\n"
+            "  python bot.py --symbol BTCUSDT --side BUY"
+            " --order-type MARKET --quantity 0.01\n"
+            "  python bot.py --symbol BTCUSDT --side SELL"
+            " --order-type LIMIT --quantity 0.01 --price 65000\n"
             "  python bot.py --show-positions\n"
             "  python bot.py --cancel-order --order-id 12345678 --symbol BTCUSDT\n"
         ),
@@ -323,11 +325,11 @@ def main() -> int:
         Exit code: 0 on success, 1 on any error.
     """
     parser = build_parser()
-    args   = parser.parse_args()
+    args = parser.parse_args()  # Must run first; --help exits here
 
-    logger.info("═" * 60)
-    logger.info("🤖 Binance Futures Testnet Trading Bot — Starting")
-    logger.info("═" * 60)
+    logger.info("=" * 60)
+    logger.info("[BOT] Binance Futures Testnet Trading Bot -- Starting")
+    logger.info("=" * 60)
 
     # ── Connect to Binance ─────────────────────────────────────────────────────
     try:
@@ -415,9 +417,9 @@ def main() -> int:
         return 1
 
     finally:
-        logger.info("═" * 60)
-        logger.info("🤖 Trading Bot — Session ended.")
-        logger.info("═" * 60)
+        logger.info("=" * 60)
+        logger.info("[BOT] Trading Bot -- Session ended.")
+        logger.info("=" * 60)
 
 
 if __name__ == "__main__":

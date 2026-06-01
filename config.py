@@ -32,6 +32,8 @@ VALID_ORDER_TYPES = {"MARKET", "LIMIT"}
 VALID_TIME_IN_FORCE = {"GTC", "IOC", "FOK"}
 
 # ── Sanity check on startup ───────────────────────────────────────────────────
+
+
 def validate_config() -> None:
     """Raise RuntimeError if critical config values are missing."""
     if not API_KEY:
