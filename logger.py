@@ -79,12 +79,17 @@ def setup_logger(name: str = "trading_bot") -> logging.Logger:
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(file_fmt)
 
-    # -- Console handler (UTF-8 forced to avoid Windows cp1252 issues) ----------
+    # -- Console handler (UTF-8 with fallback for Streamlit / pytest) -----------
     import io
-    utf8_stdout = io.TextIOWrapper(
-        sys.stdout.buffer, encoding="utf-8", errors="replace", line_buffering=True
-    )
-    console_handler = logging.StreamHandler(utf8_stdout)
+    try:
+        # Standard terminal: wrap stdout.buffer for full UTF-8 support
+        utf8_stdout = io.TextIOWrapper(
+            sys.stdout.buffer, encoding="utf-8", errors="replace", line_buffering=True
+        )
+        console_handler = logging.StreamHandler(utf8_stdout)
+    except AttributeError:
+        # Streamlit / pytest capsys: sys.stdout has no .buffer — use as-is
+        console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setLevel(logging.INFO)
     console_handler.setFormatter(console_fmt)
 
